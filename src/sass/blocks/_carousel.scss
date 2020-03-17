@@ -22,3 +22,9 @@
         left: auto;
     }
 }
+
+@media (max-width: 991px) {
+    .carousel {
+        display: none;
+    }
+}

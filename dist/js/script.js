@@ -202,16 +202,17 @@ $('input[name=phone').mask("+7 (999) 999-99-99");
 $('form').submit(function(e){
   e.preventDefault(); //отменяем стандартное поведение браузера
   $.ajax({
-    type: "POST",
+    type: "POST", // так как отдаем данные для передачи
     url: "mailer/smart.php",
-    data: $(this).serialize()
-  }).done(function(){
-    $(this).find("input").val(""); // очистили все формы от введенной информации
+    data: $(this).serialize() // данные для отправки на сервер // ajax запрос закончен
+
+  }).done(function(){ // обработка ответа от сервера 
+    $(this).find("input").val(""); // находим все инпуты и записываем в них пустые строки 
       $('#consultation, #order').fadeOut(); // закрытие модельных окол
       $('.overlay, #thanks ').fadeIn('slow');
 
 
-    $('form').trigger('reset');
+    $('form').trigger('reset'); // все формы должны очиститься
   });
   return false;
 
