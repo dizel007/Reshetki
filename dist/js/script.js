@@ -137,6 +137,11 @@ $('.modal__close').on('click', function(){ //при нажатии на крес
 
 });
 
+$('.overlay').on('click', function() {
+  $('.overlay, #consultation, #order, #thanks').fadeOut('fast');
+});
+
+
 // открывает модальное окно для заказа товара но не изменяются в форме название самого товара
 // $('.button_mini').on('click', function(){
 //   $('.overlay, #order').fadeIn('slow');

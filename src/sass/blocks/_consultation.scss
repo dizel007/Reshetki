@@ -17,3 +17,20 @@
         margin-bottom: 15px;
     }
 }
+
+@media (max-width: 767px) {
+.consultation {
+    padding: 20px;
+    min-height: 380px;
+    .title {
+        font-size: 20px;
+        text-align: center;
+    }
+    &__descr {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+
+}
