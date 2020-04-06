@@ -130,16 +130,16 @@ $('[data-modal=consultation]').on('click', function(){  // при нажатии
     $('.overlay, #consultation').fadeIn('slow'); // показать класс overlay и 'элемент с ID#consultation
 
 });
-
-$('.modal__close').on('click', function(){ //при нажатии на крестик все модальные элементы скрываются
+//при нажатии на крестик все модальные элементы скрываются
+$('.modal__close').on('click', function(){ 
 
   $('.overlay, #consultation, #order, #thanks').fadeOut('fast');
 
 });
 // При нажатии на слой OVERLAY  закрываются все модальные окна
-$('.overlay').on('click', function() {
-  $('.overlay, #consultation, #order, #thanks').fadeOut('fast');
-});
+// $('.overlay').on('click', function() {
+//   $('.overlay, #consultation, #order, #thanks').fadeOut('fast');
+// });
 
 
 // открывает модальное окно для заказа товара но не изменяются в форме название самого товара
@@ -150,7 +150,7 @@ $('.overlay').on('click', function() {
 
 $('.button_mini').each(function(i){
   $(this).on('click', function() {
- // подставляет в карточку техем из .catalog-item__subtitle
+ // подставляет в карточку название товара  из .catalog-item__subtitle
     $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
     $('.overlay, #order').fadeIn('slow');
 
